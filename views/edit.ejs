@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      
+        body{
+            text-align: center;
+            background-color: rgb(121, 194, 194);
+           
+        }
+        button{
+            background-color: #a3cfa6;
+        }
+        button:hover {
+            background-color: #45a049;
+
+        }
+       .container{
+        width:500px;
+        position: absolute;
+        left:450px;
+        top:200px;
+        border-radius: 10px;
+      
+        background-color: #e7c4c4;
+        padding: 30px;
+   
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color:blue"><u>UPDATE YOUR DETAILS</u>`</h1>
+    <form action="/edit/<%= students._id %>" method="post">
+        <label>NAME  </label><input type="text" name="name"value="<%= students._name %>"/><br/><br/>
+        <!-- <label>EMAIL  </label><input type="text"name="mail"value="<%= students._name %>"/><br/><br/> -->
+        <label>AGE  </label><input type="text" name="age"value="<%= students._name %>"/><br/><br/>
+        <button>Update Now</button>
+       
+    </form>
+</body>
+</html>

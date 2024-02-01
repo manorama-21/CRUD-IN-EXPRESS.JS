@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title><%= page %></title>
+    <style>
+        body{
+            text-align:center;
+            background-color: rgb(164, 233, 233);
+        }
+        table{
+            border:2px solid black;
+            width:100%
+        }
+        th{
+            color:darkgreen
+        }
+       .container{
+        background-color: rgb(110, 119, 88);
+        color:white;
+        width:300px;
+      
+        position: absolute;
+        left:600px;
+        top:300px;
+        border-radius: 10px;
+       }
+    </style>
+</head>
+<body>
+   <h1 style="color:darkblue"> <u>Students Data</u></h1>
+   <h3><%= title %></h3>
+
+   <div class="container">
+   <h4 style="font-size:20px"><a href="/register">Register Here...</a></h4>
+</div>
+
+   <% if (students!= "") { %>
+   <table border="1px">
+    <tr>
+        <th>ENROLL NO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>AGE</th>
+       
+        <th>OPERATION</th>
+    </tr>
+    <% students.forEach((students, index)=>
+    { %>
+<tr>
+    <td><%= index+1 %></td>
+    <td><%= students.name %></td>
+    <td><%= students.mail %></td>
+    <td><%= students.age %></td>
+    <td style="color:darkred"><a href="/edit/<%= students._id %>">Update</a> | <a href="/delete/<%= students._id %>">Delete</a></td>
+</tr>
+<% }) %>
+    
+
+   </table>
+   <% } %>
+
+
+  
+
+</body>
+</html>
